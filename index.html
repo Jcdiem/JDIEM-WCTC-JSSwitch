@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>amazing title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<p>Day of the week</p>
+<form id="dayOfWeekForm">
+    <input type="radio" id="mon" name="day" value="monday">
+    <label for="mon">Monday</label>
+    <br>
+    <input type="radio" id="tue" name="day" value="tuesday">
+    <label for="tue">Tuesday</label>
+    <br>
+    <input type="radio" id="wed" name="day" value="wednesday">
+    <label for="wed">Wednesday</label>
+    <br>
+    <input type="radio" id="thur" name="day" value="thursday">
+    <label for="thur">Thursday</label>
+    <br>
+    <input type="radio" id="fri" name="day" value="friday">
+    <label for="fri">Friday</label>
+    <br>
+    <input type="radio" id="sat" name="day" value="saturday">
+    <label for="sat">Saturday</label>
+    <br>
+    <input type="radio" id="sun" name="day" value="sunday">
+    <label for="sun">Sunday</label>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<p id="out">This will change</p>
+<script>
+    $(document).ready(function(){
+       $('#dayOfWeekForm').submit(function(e){
+           e.preventDefault();
+
+           const day = $('input[name=day]:checked').val();
+           let out = 'Broken';
+
+           console.debug(day);
+
+           switch (day){
+               case 'monday':
+                   out = 'Task: mon yada';
+                   break;
+
+               case 'tuesday':
+                   out = 'Task: tue yada';
+                   break;
+
+               case 'wednesday':
+                   out = 'Task: wed yada';
+                   break;
+
+               case 'thursday':
+                   out = 'Task: thur yada';
+                   break;
+
+               case 'friday':
+                   out = 'Task: fri yada';
+                   break;
+
+               case 'saturday':
+                   out = 'Task: sat yada';
+                   break;
+
+               case 'sunday':
+                   out = 'Task: sun yada';
+                   break;
+
+               default:
+                   console.error('?????????????')
+                   break;
+           }
+
+           $('#out').text( out)
+       })
+    });
+</script>
+</body>
+</html>
